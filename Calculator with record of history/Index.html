@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Theme Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div> <!-- Blurred Background -->
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="history" id="history" style="display: none;"></div> <!-- History Section -->
+    <div class="buttons">
+      <!-- Number buttons -->
+      <button onclick="playClickSound(); appendNumber('7')">7</button>
+      <button onclick="playClickSound(); appendNumber('8')">8</button>
+      <button onclick="playClickSound(); appendNumber('9')">9</button>
+      <button onclick="playClickSound(); chooseOperation('/')">÷</button>
+    
+      <button onclick="playClickSound(); appendNumber('4')">4</button>
+      <button onclick="playClickSound(); appendNumber('5')">5</button>
+      <button onclick="playClickSound(); appendNumber('6')">6</button>
+      <button onclick="playClickSound(); chooseOperation('*')">×</button>
+    
+      <button onclick="playClickSound(); appendNumber('1')">1</button>
+      <button onclick="playClickSound(); appendNumber('2')">2</button>
+      <button onclick="playClickSound(); appendNumber('3')">3</button>
+      <button onclick="playClickSound(); chooseOperation('-')">−</button>
+    
+      <button onclick="playClickSound(); appendNumber('0')">0</button>
+      <button onclick="playClickSound(); appendNumber('.')">.</button>
+      <button onclick="playClickSound(); calculate()">=</button>
+      <button onclick="playClickSound(); chooseOperation('+')">+</button>
+    
+      <!-- Clear and SH buttons with adjusted span -->
+      <button onclick="playClickSound(); clearDisplay()" class="clear span-two">C</button>
+      <button onclick="playClickSound(); toggleHistory()" class="show-history span-two">SH</button>
+    </div>
+    
+  </div>
+
+  <script>
+    let display = document.getElementById("display");
+    let historyDisplay = document.getElementById("history");
+    let currentOperand = '';
+    let previousOperand = '';
+    let operation = null;
+    let history = []; // Array to store the last 5 calculations
+    const clickSound = new Audio('click.mp3'); // Add your sound file here
+
+    function playClickSound() {
+      clickSound.currentTime = 0; // Reset sound to start
+      clickSound.play();
+    }
+
+    function clearDisplay() {
+      currentOperand = '';
+      previousOperand = '';
+      operation = null;
+      updateDisplay();
+    }
+
+    function appendNumber(number) {
+      if (number === '.' && currentOperand.includes('.')) return;
+      currentOperand = currentOperand.toString() + number.toString();
+      updateDisplay();
+    }
+
+    function chooseOperation(op) {
+      if (currentOperand === '') return;
+      if (previousOperand !== '') {
+        calculate();
+      }
+      operation = op;
+      previousOperand = currentOperand;
+      currentOperand = '';
+      updateDisplay();
+    }
+
+    function calculate() {
+      let result;
+      const prev = parseFloat(previousOperand);
+      const current = parseFloat(currentOperand);
+      if (isNaN(prev) || isNaN(current)) return;
+      switch (operation) {
+        case '+':
+          result = prev + current;
+          break;
+        case '-':
+          result = prev - current;
+          break;
+        case '*':
+          result = prev * current;
+          break;
+        case '/':
+          result = prev / current;
+          break;
+        default:
+          return;
+      }
+      addToHistory(`${previousOperand} ${operation} ${currentOperand} = ${result}`);
+      currentOperand = result;
+      operation = null;
+      previousOperand = '';
+      updateDisplay();
+    }
+
+    function addToHistory(entry) {
+      history.unshift(entry); // Add new entry to the beginning of the array
+      if (history.length > 999) history.pop(); 
+      updateHistoryDisplay();
+    }
+
+    function updateHistoryDisplay() {
+      historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+    }
+
+    function toggleHistory() {
+      if (historyDisplay.style.display === 'none') {
+        historyDisplay.style.display = 'block';
+      } else {
+        historyDisplay.style.display = 'none';
+      }
+    }
+
+    function updateDisplay() {
+      if (operation != null) {
+        display.innerText = `${previousOperand} ${operation} ${currentOperand}`;
+      } else {
+        display.innerText = currentOperand || '0';
+      }
+    }
+  </script>
+</body>
+</html>

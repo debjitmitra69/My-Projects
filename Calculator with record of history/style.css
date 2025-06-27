@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center/cover;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.calculator {
+  position: relative;
+  width: 300px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  background-color: #333;
+  padding: 20px;
+  font-size: 2em;
+  text-align: right;
+  border-bottom: 1px solid #444;
+}
+
+.history {
+  background-color: #333;
+  color: #ddd;
+  padding: 10px;
+  font-size: 0.9em;
+  border-bottom: 1px solid #444;
+  max-height: 100px;
+  overflow-y: auto;
+  display: none; /* Initially hidden */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; /* Remove gaps between buttons */
+}
+
+button {
+  background-color: #2d2d2d;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:active {
+  background-color: #555;
+}
+
+/* Span two columns for wide buttons like "C" and "SH" */
+.span-two {
+  grid-column: span 2;
+}
+
+.show-history,
+.clear {
+  background-color: #ff9500;
+  color: white;
+}
+
+.show-history:hover,
+.clear:hover {
+  background-color: #ffa733;
+}
