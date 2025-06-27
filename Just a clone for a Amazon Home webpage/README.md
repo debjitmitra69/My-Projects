@@ -18,5 +18,6 @@ This is a basic **Amazon home page clone** built using **HTML and CSS**. The lay
 ## 🖼️ Screenshot
 
 ```markdown
-![Amazon Clone Preview](screenshot.png)
+![Amazon Clone Preview](assets/screenshot.png)
+
 
