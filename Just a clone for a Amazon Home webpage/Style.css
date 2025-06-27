@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: #0F1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-logo{
+    height: 50px;
+    width: 130px;
+}
+.logo{
+    background-image: url("assets/Amazon_Logo.png");
+    height: 50px;
+    width: 100%;
+    background-size: cover;
+}
+.border{
+    border: 1.5px solid transparent;
+}
+.border:hover{
+    border: 1.5px solid white;
+}
+.add-first{
+    color: #cccccc;
+    font-size: 0.85rem;
+    margin-left: 15px;
+    
+}
+.nav-address {
+    margin: 10px;
+}
+
+.add-second{
+   
+    font-size: 1rem;
+    margin-left: 3px;
+    
+}   
+.add-icon {
+    display: flex;
+    align-items: center;
+}
+.nav-search {
+    display: flex;
+    align-items: center;
+}
+
+.Search-Input {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 3px;
+    width: 620px;
+    height: 40px;
+}
+.Search-Select {
+    background-color: #f3f3f3;
+    height: 45px;
+    border-radius: 3px;
+
+}
+
+.search-icon {
+    /* display: flex;
+    align-items: center; */
+    margin: 2px;
+    background-color: #febd69;
+    height: 44px;
+    width: 45px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #0F1111;
+
+}
+
+#Hello {
+    font-size: 12px;
+    
+    
+}
+
+#Account {
+    font-size: 14px;
+    font-weight: bold;
+}
+.Sign-Cart {
+    display: flex;
+}
+
+.Cart-logo {
+    font-size: 30px;
+}
+
+#Cart-text {
+    padding-top: 13px;
+    font-size: 14px;
+    
+}
+.Nav_2 {
+    margin-top: 0px;
+    align-items: center;
+    background-color: #222f3d;
+    width: 1865px;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+.Nav_2_written{
+    color: white;
+    text-decoration: none;
+}
+ 
+.J1{
+    background-color: #111b1bfd;
+    width: 890px;
+
+} 
+.J{
+    background-color: #111b1bfd;
+    width: 3px;
+
+} 
+
+.Nav_2Text1_Size {
+    font-size: 0.8rem;
+}
+.Hero_Section{
+    background-image: url("assets/5.png");
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 10px;
+    
+}
+.Hero_Section_Text{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 40px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+.Hero_Section_Text_color{
+    color: #007185;
+    font-size: 0.8rem;
+}
+
+.Boxes_Section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:rgba(255, 230, 0, 0.516);
+}
+    
+.Box1{
+    margin: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+
+}
+.Box_Image1{
+    height: 350px;
+    width: 300px;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url("assets/2.png");
+    background-size: cover;
+}
+
+.Box2{
+    margin: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+}
+.Box_Image2{
+    margin-bottom: 4px;
+    height: 355px;
+    width: 300px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url('assets/3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Box3{
+    margin: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+}
+.Box_Image3{
+    margin-bottom: 4px;
+    height: 355px;
+    width: 300px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url("assets/6.png");
+    background-size: cover;
+}
+
+.Box4{
+    margin: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+}
+.Box_Image4{
+    margin-bottom: 4px;
+    height: 355px;
+    width: 300px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url("assets/7.png");
+    background-size: cover;
+}
+.Box_Image1, .Box_Image2, .Box_Image3, .Box_Image4 {
+    background-size: contain; /* This will make the image fit inside the box without cropping */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image in the box */
+    height: 355px; /* Adjust the height as needed */
+    width: 290px; /* Adjust the width to match the box size */
+    margin-bottom: -2.5px; /* This is for consistent spacing, as you have used */
+}
+}
